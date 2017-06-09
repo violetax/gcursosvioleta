@@ -37,9 +37,15 @@
         </property>
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
+    
+    <jee:jndi-lookup id="cursoServiceRemote" jndi-name="java:app/gcvioleta-ejb/cursoServiceBean" />
+
+	<bean id="cursoServiceImp" class="com.ipartek.proyectofinal.service.CursoServiceImp">
+		<property name="cursoServiceRemote" ref="cursoServiceRemote" />
+	</bean>
 
 <!-- 
-	<jee:jndi-lookup id="cursoServiceRemote" jndi-name="java:app/gestion-docente-ejb/cursoServiceBean" />
+	
 	<jee:jndi-lookup id="profesorServiceRemote" jndi-name="java:app/gestion-docente-ejb/profesorServiceBean" />
 	<jee:jndi-lookup id="clienteServiceRemote" jndi-name="java:app/gestion-docente-ejb/clienteServiceBean" />
 	<jee:jndi-lookup id="alumnoServiceRemote" jndi-name="java:app/gestion-docente-ejb/alumnoServiceBean" />

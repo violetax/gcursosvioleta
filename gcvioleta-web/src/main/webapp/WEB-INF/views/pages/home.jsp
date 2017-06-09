@@ -3,10 +3,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <main>
 	<section>
-		<header><h2>Bienvenido</h2></header>
+		<header><h2>Bienvenido a la gestión de cursos.</h2></header>
 		<div>
-			Bla, bla, bla,.....
-		
+			Para realizar operaciones es necesaria su identificación.		
 		</div>
 	</section>
 </main>

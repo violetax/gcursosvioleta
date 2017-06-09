@@ -19,66 +19,13 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li>
-				<a href="<c:url value='/alumnos'/>">
-					<spring:message code="menu.alumnos" text="G.Alumnos" />
-				</a>
-	        </li>
-	        <li>
-				<a href="<c:url value='/profesores'/>">
-					<spring:message code="menu.profesores" text="G.Profesores" />
-				</a>
-	        </li>
-	        <li>
-				<a href="<c:url value='/clientes'/>">
-						<spring:message code="menu.clientes" text="G.Clientes" />
+				<a href="<c:url value='/cursos'/>">
+					<spring:message code="menu.cursos" text="G. Cursos" />
 				</a>
 	        </li>
 	        <li role="separator" class="divider"></li>
-	        <li>
-				<a href="<c:url value='/cursos'/>">
-					 G.Cursos
-				</a>
-	        </li>
-	        <!-- 
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
-	          </ul>
-	        </li>
-	         -->
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li>
-	        	<div class="btn-group">
-					<button class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" >
-						Idiomas <span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-						<li>
-							<a class="" href="?locale=es">				
-							<spring:message code="idioma.castellano" text="castellano"/>
-							</a>
-						</li>
-						<li>
-							<a class="" href="?locale=en">
-								<spring:message code="idioma.ingles" text="ingles"/>
-							</a>
-						</li>
-						<li>
-							<a class="" href="?locale=eu">
-								<spring:message code="idioma.euskera" text="euskera"/>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
 			<li>
 			<sec:authorize access="isAnonymous()">
 			    <form method="POST"  role="form" class="navbar-form navbar-right" action="<c:url value='/login'/>">
@@ -101,28 +48,7 @@
 			    <a class="btn " href="<c:url value="/logout" />">Logout</a>
 			</sec:authorize>
 			</li>
-			  <!-- 
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	          </ul>
-	        </li>
-	         -->
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	<div class="container">
-		<c:if test="${not empty mensaje}">
-		
-			<div class="${mensaje.type.styles}">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	   			 <strong>${mensaje.msg}</strong> 
-	  		</div>
-  		</c:if>
-	</div>
