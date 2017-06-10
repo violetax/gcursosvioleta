@@ -19,7 +19,7 @@
         <ejb.version>3.1</ejb.version>
         <ejb-api.version>3.0</ejb-api.version>
         <!-- JPA Project -->
-        <project.version>1.0.0-SNAPSHOT</project.version>
+        <project.version>0.0.1-SNAPSHOT</project.version>
   		<artifact.jar>gcvioleta-common</artifact.jar>
   		<!-- apache CFX -->
         <cxf.version>3.1.6</cxf.version>

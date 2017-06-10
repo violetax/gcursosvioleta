@@ -18,7 +18,7 @@
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.15</log4j.version>
 		<servlet-api.version>2.5</servlet-api.version>
-		<war.name>gestioncursosvioleta</war.name>
+		<war.name>gcursosvioleta</war.name>
 		<mysql.version>5.1.40</mysql.version>
 		<javax.validation.version>1.0.0.GA</javax.validation.version>
 		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version>

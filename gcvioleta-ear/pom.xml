@@ -60,9 +60,8 @@
                             <groupId>com.ipartek.proyectofinal</groupId>
                             <bundleFileName>gcvioleta-web.war</bundleFileName>
                             <artifactId>${artifact.war}</artifactId>
-                            <contextRoot>gcvioleta</contextRoot>
+                            <contextRoot>gcursosvioleta</contextRoot>
                         </webModule>
-
                         <ejbModule>
                             <groupId>com.ipartek.proyectofinal</groupId>
                             <bundleFileName>gcvioleta-ejb.jar</bundleFileName>
