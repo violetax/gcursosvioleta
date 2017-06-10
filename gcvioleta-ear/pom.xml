@@ -8,4 +8,72 @@
   <artifactId>gcvioleta-ear</artifactId>
   <packaging>ear</packaging>
   <name>Capa de aplicacion</name>
+ <properties>
+    <maven-compiler-plugin>2.5.1</maven-compiler-plugin>
+    <project.version>1.0.0-SNAPSHOT</project.version>
+    <artifact.jar>gcvioleta-common</artifact.jar>
+    <artifact.ejb>gcvioleta-ejb</artifact.ejb>
+    <artifact.war>gcvioleta-web</artifact.war>
+    <java.version>1.6</java.version>
+  </properties>
+  <dependencies>
+     <dependency>
+        <groupId>com.ipartek.proyectofinal</groupId>
+        <artifactId>${artifact.ejb}</artifactId>
+        <version>${project.version}</version>
+        <type>ejb</type>
+    </dependency>
+    <dependency>
+        <groupId>com.ipartek.proyectofinal</groupId>
+        <artifactId>${artifact.war}</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>war</type>
+    </dependency>
+    <!--    -->
+    <dependency>
+        <groupId>com.ipartek.proyectofinal</groupId>
+        <artifactId>${artifact.jar}</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>jar</type>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                  <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <modules>  
+                      <!--                          -->
+                        <webModule>
+                            <groupId>com.ipartek.proyectofinal</groupId>
+                            <bundleFileName>gcvioleta-web.war</bundleFileName>
+                            <artifactId>${artifact.war}</artifactId>
+                            <contextRoot>gcvioleta</contextRoot>
+                        </webModule>
+
+                        <ejbModule>
+                            <groupId>com.ipartek.proyectofinal</groupId>
+                            <bundleFileName>gcvioleta-ejb.jar</bundleFileName>
+                            <artifactId>${artifact.ejb}</artifactId>
+                        </ejbModule>
+                    </modules>          
+                    <displayName>gcvioletaear</displayName>
+                    <!-- If I want maven to generate the application.xml, set this to true -->
+                    <generateApplicationXml>true</generateApplicationXml>
+                </configuration>
+            </plugin>
+    </plugins>
+  </build>
 </project>

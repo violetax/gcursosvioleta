@@ -11,7 +11,13 @@
 	<java.version>1.6</java.version>
   </properties>
   <dependencies>
-		<!-- JPA implementation -->
+  <dependency>
+     <groupId>dom4j</groupId>
+     <artifactId>dom4j</artifactId>
+     <version>1.6.1</version>
+     <scope>provided</scope>
+  </dependency>
+  <!-- JPA implementation -->
 	<dependency>
 		<groupId>org.hibernate</groupId>
 		<artifactId>hibernate-core</artifactId>
@@ -27,7 +33,7 @@
 	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.40</version>
+		<version>5.1.42</version>
 	</dependency>
   </dependencies>
   <build>
