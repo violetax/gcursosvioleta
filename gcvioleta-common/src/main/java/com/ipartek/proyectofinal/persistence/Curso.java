@@ -38,8 +38,10 @@ public class Curso implements Serializable {
 	@Column(name = "codigo")
 	private long codigo;
 	
-	private String IdProxCurso;
-	private String NomCurso;
+	@Column(name = "idProxCurso")
+	private String idProxCurso;
+	@Column(name = "nomCurso")
+	private String nomCurso;
 	private boolean activo;
 	
 	public Curso() {
@@ -55,19 +57,19 @@ public class Curso implements Serializable {
 	}
 
 	public String getIdProxCurso() {
-		return IdProxCurso;
+		return idProxCurso;
 	}
 
 	public void setIdProxCurso(String idProxCurso) {
-		IdProxCurso = idProxCurso;
+		this.idProxCurso = idProxCurso;
 	}
 
 	public String getNomCurso() {
-		return NomCurso;
+		return nomCurso;
 	}
 
 	public void setNomCurso(String nomCurso) {
-		NomCurso = nomCurso;
+		this.nomCurso = nomCurso;
 	}
 
 	public boolean isActivo() {
@@ -80,7 +82,7 @@ public class Curso implements Serializable {
 	
 	@Override
 	public String toString() {
-		return this.IdProxCurso + " " + this.NomCurso;
+		return this.idProxCurso + " " + this.nomCurso;
 	}
 
 	@Override

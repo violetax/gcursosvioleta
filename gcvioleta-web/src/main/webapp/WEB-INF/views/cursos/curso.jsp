@@ -4,6 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<jsp:include page="../defaultHeader.jsp" />
+
 <section class="row">
 		<c:url var="sendUrl" value="/cursos/save"/>
 		<c:url var="cancelUrl" value="/cursos"/>
@@ -38,4 +40,6 @@
 		<form:hidden path="activo"/>
 	</form:form>
 	</section>
+	
+	<jsp:include page="../defaultFooter.jsp" />
 

@@ -1,5 +1,6 @@
 package com.ipartek.proyectofinal.curso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -26,19 +27,14 @@ public class CursoServiceBean implements CursoServiceRemote {
 	
 	 @PersistenceContext(unitName="gcursosvioleta")
 	 private EntityManager entityManager;
-	
-    /**
-     * Default constructor. 
-     */
-    public CursoServiceBean() {
-        // TODO Auto-generated constructor stub
-    }
 
 	@Override
 	public List<Curso> getAll() {
+		
 		LOGGER.debug("Carga de cursos.");
-		TypedQuery<Curso> pcursos = entityManager.createNamedQuery("curso.getAll", Curso.class);
-		return pcursos.getResultList();
+			TypedQuery<Curso> pcursos = entityManager.createNamedQuery("curso.getAll", Curso.class);
+		LOGGER.debug("Lista de cursos: " + pcursos.getResultList().size());
+			return pcursos.getResultList();
 	}
 
 	@Override

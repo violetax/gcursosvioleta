@@ -47,16 +47,16 @@ public class CursoController {
 		sdf.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
 	}
-
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView getAll() {
-		mav = new ModelAndView("cursos");
-		List<Curso> cursos = cursoService.getAll();
+		LOGGER.info("Entra en el controller: getall");
+		mav = new ModelAndView("cursos/cursos");
+			List<Curso> cursos = cursoService.getAll();
 		mav.addObject("listadoCursos", cursos);
-		LOGGER.info("Cargada lista de cursos.");
-	return mav;
-}
+			LOGGER.info("Cargada lista de cursos");
+		return mav;
+		}
 	
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getById(@PathVariable("id") long id) {

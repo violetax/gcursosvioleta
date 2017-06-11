@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+
+<jsp:include page="defaultHeader.jsp" />
+
 <main class="container-fluid">
 	<section class="row">
 		<header><h2>Login</h2></header>
@@ -34,3 +37,5 @@
 		</div>
 	</section>
 </main>
+
+<jsp:include page="defaultFooter.jsp" />
