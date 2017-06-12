@@ -33,19 +33,27 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      
-	      <% System.out.println("Entra en cursos..."); %>
 
 	    </div>
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
+	      <li>
+				<a href=" <c:url value='/addCurso'/>">
+					<spring:message code="menu.home" text="Inicio">${menuHome }</spring:message>
+				</a>
+	        </li>
 	        <li>
 				<a href="<c:url value='/cursos'/>">
-					<spring:message code="menu.cursos" text="G. Cursos" />
+					<spring:message code="menu.cursos" text="G. Cursos">${menuCursos }</spring:message>
 				</a>
 	        </li>
 	        <li role="separator" class="divider"></li>
+	        <li>
+				<a href=" <c:url value='/'/>">
+					<spring:message code="menu.home" text="Inicio">${menuHome }</spring:message>
+				</a>
+	        </li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 			<li>

@@ -6,6 +6,9 @@
 
 <jsp:include page="../defaultHeader.jsp" />
 
+<spring:message var="formGuardar" scope="request" text="Guardar" code="form.guardar" />
+<spring:message var="formCancelar" scope="request" text="Cancelar" code="form.cancelar" />
+
 <section class="row">
 		<c:url var="sendUrl" value="/cursos/save"/>
 		<c:url var="cancelUrl" value="/cursos"/>
@@ -17,19 +20,19 @@
 		
 		
 		<div class="form-group">
-			<form:label path="IdProxCurso" cssClass="control-label  col-xs-2">Identificador:</form:label>
+			<form:label path="idProxCurso" cssClass="control-label  col-xs-2">Identificador:</form:label>
 			<div class="col-xs-4">
-				<form:input type="text" path="IdProxCurso" cssClass="form-control" cssErrorClass="form-control text-danger"/>
+				<form:input type="text" path="idProxCurso" cssClass="form-control" cssErrorClass="form-control text-danger"/>
 			</div>
-			<form:errors path="IdProxCurso" cssClass="text-danger col-xs-6" />
+			<form:errors path="idProxCurso" cssClass="text-danger col-xs-6" />
 		</div>
 		
 		<div class="form-group">
-			<form:label path="NomCurso" cssClass="control-label  col-xs-2">Nombre:</form:label>
+			<form:label path="nomCurso" cssClass="control-label  col-xs-2">Nombre:</form:label>
 			<div class="col-xs-4">
-				<form:input type="text" path="NomCurso" cssClass="form-control" cssErrorClass="form-control text-danger"/>
+				<form:input type="text" path="nomCurso" cssClass="form-control" cssErrorClass="form-control text-danger"/>
 			</div>
-			<form:errors path="NomCurso" cssClass="text-danger col-xs-6" />
+			<form:errors path="nomCurso" cssClass="text-danger col-xs-6" />
 		</div>
 		<div class="form-group">
 			<div class="col-md-offset-3">

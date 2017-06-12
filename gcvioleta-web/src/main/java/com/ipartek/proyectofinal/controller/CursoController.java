@@ -60,26 +60,26 @@ public class CursoController {
 	
 	@RequestMapping(value = "/{id}")
 	public ModelAndView getById(@PathVariable("id") long id) {
-		mav = new ModelAndView("curso");
+		mav = new ModelAndView("cursos/curso");
 		mav.addObject("curso", cursoService.getById(id));
 		LOGGER.info("Cargado curso.");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/addCurso}")
+	@RequestMapping(value = "/addCurso")
 	public String addCurso(Model model) {
 	
 		Curso curso = new Curso();
 		curso.setActivo(true);
 		model.addAttribute("curso", curso);
-		LOGGER.info("Añadir curso.");
-		return "curso";
+			LOGGER.info("Controller: añadir curso.");
+		return "cursos/curso";
 	}
 	
 	@RequestMapping(value = "/editCurso/{codigo}")
 	public ModelAndView editCurso(@PathVariable("codigo") long codigo) {
 		
-		mav = new ModelAndView("curso");
+		mav = new ModelAndView("cursos/curso");
 		mav.addObject("curso", cursoService.getById(codigo));
 		LOGGER.info("Editar curso.");
 		
@@ -94,14 +94,16 @@ public class CursoController {
 
 		if (bindingResult.hasErrors()) {
 			LOGGER.info("Los datos del curso tienen errores");
-			destino = "curso";
+			destino = "cursos/curso";
 		} else {
 			destino = "redirect:/cursos";
 			if (curso.getCodigo() > -1) {
+				LOGGER.info("Codigo curso: ",curso.getCodigo());
+				System.out.println("Codigo curso: " + curso.getCodigo());
 				LOGGER.info("Editar curso: ",curso.toString());
 				cursoService.update(curso);
 			} else {
-				LOGGER.info("Crear curso: ",curso.toString());
+				LOGGER.info("Controler: crear curso: ",curso.toString());
 				cursoService.create(curso);
 			}
 		}
@@ -109,9 +111,9 @@ public class CursoController {
 	}
 	
 	@RequestMapping(value = "/deleteCurso/{id}") 
-	public String delete(@PathVariable("id") long id, Model model) {
+	public String delete(@PathVariable("id") long id) {
 		cursoService.delete(id);
 			LOGGER.info("Borrar curso: ", cursoService.getById(id).getCodigo());
-		return "cursos";
+		return "redirect:/cursos";
 	}
 }

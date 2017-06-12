@@ -24,14 +24,16 @@ public class CursoConverter implements Converter<String, Curso> {
 	
 	@Autowired
 	CursoService cursoService;
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CursoConverter.class);
 	
 	
 	@Override
 	public Curso convert(String codigo) {
-		Curso curso = cursoService.getById(Long.parseLong(codigo));
 		
-		LOGGER.info(codigo);
+		Curso curso = cursoService.getById(Long.parseLong(codigo));
+				
+		LOGGER.info(codigo.toString());
 		LOGGER.info("Curso converter: hecho.");
 		
 		return curso;

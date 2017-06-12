@@ -47,8 +47,9 @@ public class CursoServiceBean implements CursoServiceRemote {
 	@Override
 	public Curso create(Curso curso) {
 		try {
-			LOGGER.debug("Crear curso: " + curso.toString());
-			curso = entityManager.merge(curso);
+			LOGGER.debug("Crear remoto curso: " + curso.toString());
+			entityManager.persist(curso);
+			entityManager.flush();
 		} catch (Exception e) {}
 		return curso;
 	}
@@ -56,7 +57,7 @@ public class CursoServiceBean implements CursoServiceRemote {
 	@Override
 	public Curso update(Curso curso) {
 		try {
-			LOGGER.debug("Editar curso: " + curso.toString());
+			LOGGER.debug("Editar remoto curso: " + curso.toString());
 			curso = entityManager.merge(curso);
 		} catch (Exception e) {}
 		return curso;
