@@ -1,0 +1,12 @@
+.table a
+{
+    display:block;
+    text-decoration:none;
+	min-width: 60px;
+	padding-right: 2px; 
+}
+
+th {
+	background-color:#87CEFA;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}

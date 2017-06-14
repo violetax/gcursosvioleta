@@ -20,7 +20,6 @@
 
 <title>
 	<spring:message text="Gestion Cursos" scope="page" code="aplicacion.nombre" /> 
-		<!-- -   <c:out value="${seccion}"/> --> 
 </title>
 
 </head>

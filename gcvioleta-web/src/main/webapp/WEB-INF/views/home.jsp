@@ -5,12 +5,20 @@
 
 <jsp:include page="defaultHeader.jsp" />
 
-<main>
+<main class="container-fluid">
 	<section>
 		<header><h2>Bienvenido a la gestión de cursos.</h2></header>
-		<div>
-			Para realizar operaciones es necesaria su identificación.		
-		</div>
+		
+		<sec:authorize access="isAnonymous()">
+			<div>
+				Para realizar operaciones es necesaria su identificación.		
+			</div>
+		</sec:authorize>
+		<sec:authorize access="isAuthenticated()">
+			<div>
+				Sesión autorizada comenzada.
+			</div>
+		</sec:authorize>
 	</section>
 </main>
 
