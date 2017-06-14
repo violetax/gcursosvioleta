@@ -43,7 +43,7 @@ public class CursoServiceBean implements CursoServiceRemote {
 		LOGGER.debug("Carga del curso con codigo: " + curso.getCodigo());
 		return curso;
 	}
-
+	
 	@Override
 	public Curso create(Curso curso) {
 		try {
@@ -70,5 +70,7 @@ public class CursoServiceBean implements CursoServiceRemote {
 		entityManager.remove(entityManager.find(Curso.class, codigo));
 		} catch (Exception e) {}
 	}
+
+
 
 }

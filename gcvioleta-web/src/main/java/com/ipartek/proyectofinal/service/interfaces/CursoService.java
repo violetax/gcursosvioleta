@@ -22,5 +22,6 @@ public interface CursoService {
 	public Curso create(Curso curso);
 	public Curso update(Curso curso);
 	public void delete(long codigo);
+
 	
 }
