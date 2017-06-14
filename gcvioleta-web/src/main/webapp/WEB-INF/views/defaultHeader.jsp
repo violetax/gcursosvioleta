@@ -17,6 +17,8 @@
 
 <spring:url var="myestilo" value="/resources/css/styles.css"></spring:url>
 <link rel="stylesheet" href="${myestilo}" >
+<spring:url var="myjavascript" value="/resources/js/javascript.css"></spring:url>
+<link rel="stylesheet" href="${myjavascript}" >
 
 <title>
 	<spring:message text="Gestion Cursos" scope="page" code="aplicacion.nombre" /> 
