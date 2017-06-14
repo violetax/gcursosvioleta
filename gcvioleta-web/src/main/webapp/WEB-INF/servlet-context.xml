@@ -28,13 +28,14 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/resources/css/**" location="/resources/css/" />
 	<resources mapping="/resources/js/**" location="/resources/js/" />
 	<resources mapping="/resources/images/**" location="/resources/images/" />
 	<resources mapping="/resources/fonts/**" location="/resources/fonts/" />
- 
+
+<!-- 
  Resolvedor de Vistas de Apache Tiles con Spring 
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
  Referencia al archivo de configuracion de Apache Tiles 

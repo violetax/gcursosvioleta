@@ -7,38 +7,43 @@
 
 <spring:message var="formCrear" scope="request"  text="Nuevo curso" code="form.crear" />
 <spring:message var="formEditar" scope="request"  text="Editar" code="form.editar" />
-<spring:message var="formEditar" scope="request"  text="Borrar" code="form.borrar" />
+<spring:message var="formBorrar" scope="request"  text="Borrar" code="form.borrar" />
 
 <section class="row">
 		
 		<header class="col-xs-12"><h2 class=""> ${cursosTitulo } </h2></header>
 
-		<div class="row">
-			<div class="col-xs-5 col-md-10 col-lg-5">
-				<a class="btn btn-info" href="<c:url value='/cursos/addCurso' />">${formCrear}</a>
+	
+		<div class="flex-container boton">
+			<div class="col-xs-6 col-lg-4" >
+				<a class="btn btn-info" style="margin-bottom:5px" href="<c:url value='/cursos/addCurso' />">${formCrear}</a>
 			</div>
 		</div>
+	
 
+	<div class="flex-container">
 		<div class="row">
-				<div class="col-xs-2 col-md-4 col-lg-2" style="display: inline-block; background-color:#87CEFA; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);">Identificador</div>
-				<div class="col-xs-1 col-md-2 col-lg-1" style="display: inline-block; background-color:#87CEFA; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);">Curso</div>
-				
-			<!-- <div class="col-xs-1 col-md-2 col-lg-1" style="display: inline-block; background-color:#87CEFA; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);">Activo</div>   -->
+				<div class="col-xs-6 col-sm-3 col-lg-4" style="display: inline-block; background-color:#87CEFA; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);">Identificador</div>
+				<div class="col-xs-12 col-sm-6 col-lg-8" style="display: inline-block; background-color:#87CEFA; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);">Curso</div>
 		</div>
-		
+	</div>
+	
 		<c:choose>
 			<c:when test="${not empty listadoCursos}">
 				<c:forEach var="curso" items="${listadoCursos}">
-					<div class="row">
-						<div class="col-xs-2 col-md-4 col-lg-2">${curso.idProxCurso}</div>
-						<div class="col-xs-1 col-md-2 col-lg-1">${curso.nomCurso}</div>				
+					<div class="flex-container">
+						<div class="row">
+							<div class="col-xs-6 col-sm-3 col-lg-4" style="display: inline-block">${curso.idProxCurso}</div>
+							<div class="col-xs-12 col-sm-6 col-lg-8" style="display: inline-block">${curso.nomCurso}</div>				
+						</div>
+						<div>
+							<a class="btn btn-success col-xs-3 col-sm-1 col-lg-2" href="<c:url value='/cursos/editCurso/${curso.codigo}'/>">${formEditar}</a>
+						</div>
+						<div>
+							<a class="btn btn-danger col-xs-3 col-sm-1 col-lg-2" href="<c:url value='/cursos/deleteCurso/${curso.codigo}'/>">${formBorrar}</a>
+						</div>
 					</div>
-					<div class="col-xs-1 col-md-2 col-lg-1">
-						<a class="btn btn-success" href="<c:url value='/cursos/editCurso/${curso.codigo}'/>">${formEditar}</a>
-					</div>
-					<div class="col-xs-1 col-md-2 col-lg-1">
-						<a class="btn btn-danger" href="<c:url value='/cursos/deleteCurso/${curso.codigo}'/>">${formBorrar}</a>
-					</div>
+					
 				</c:forEach>
 				
 			</c:when>

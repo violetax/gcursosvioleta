@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 
+<spring:url var="myestilo" value="/resources/css/styles.css"></spring:url>
+<link rel="stylesheet" href="${myestilo}" >
+
 <title>
 	<spring:message text="Gestion Cursos" scope="page" code="aplicacion.nombre" /> 
 		<!-- -   <c:out value="${seccion}"/> --> 
@@ -39,7 +42,7 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      <li>
-				<a href=" <c:url value='/addCurso'/>">
+				<a href=" <c:url value='/'/>">
 					<spring:message code="menu.home" text="Inicio">${menuHome }</spring:message>
 				</a>
 	        </li>
@@ -49,11 +52,6 @@
 				</a>
 	        </li>
 	        <li role="separator" class="divider"></li>
-	        <li>
-				<a href=" <c:url value='/'/>">
-					<spring:message code="menu.home" text="Inicio">${menuHome }</spring:message>
-				</a>
-	        </li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 			<li>

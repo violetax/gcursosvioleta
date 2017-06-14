@@ -26,8 +26,8 @@ public class CursoValidator implements Validator {
 		
 		// Curso curso = (Curso) target;
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "idProxCurso", "requerido.IdProxCurso");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nomCurso", "requerido.NomCurso");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "idProxCurso", "requerido.idProxCurso");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nomCurso", "requerido.nomCurso");
 		
 	}
 
